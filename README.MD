@@ -27,11 +27,11 @@ The current public-facing work here is centered on:
 - `IonStack/CVE-2026-10702/` and `security-research/Chrome-CVE-2026-5865/`
   Browser-side research snippets.
 
-## Current Focus: `kernel_5_10_240`
+## Current Focus: `eureka-UP1A.231005.007.A1`
 
 The main unpublished work that was cleaned up for release lives under:
 
-- `IonStack/CVE-2026-43499/exploit/src/targets/kernel_5_10_240/`
+- `IonStack/CVE-2026-43499/exploit/src/targets/eureka-UP1A.231005.007.A1/`
 
 This target was used for research on an Oculus / Meta Quest 3 class Android 14 kernel based on Linux `5.10.240`. The objective was to adapt the existing project structure to a new target while preserving the original exploit split:
 
@@ -52,7 +52,7 @@ During this work, the following points were checked against the local kernel ima
 
 ## Research Conclusions So Far
 
-The most important outcome of the `kernel_5_10_240` bring-up was negative result triage: several directions that looked initially plausible were narrowed down or deprioritized.
+The most important outcome of the `eureka-UP1A.231005.007.A1` bring-up was negative result triage: several directions that looked initially plausible were narrowed down or deprioritized.
 
 ### 1. The main blocker is still the slide / KASLR leak stage
 
@@ -112,7 +112,7 @@ The public repo does not include device images, IDA databases, extracted symbols
 Included in the public tree:
 
 - source code
-- target-specific offset and adaptation work under `kernel_5_10_240`
+- target-specific offset and adaptation work under `eureka-UP1A.231005.007.A1`
 - minimal repository documentation
 
 Excluded from the public tree:
@@ -130,7 +130,7 @@ Before publishing, confirm that the diff contains only:
 - `README.MD`
 - `AGENTS.md`
 - `.gitignore`
-- the intended files under `IonStack/CVE-2026-43499/exploit/src/targets/kernel_5_10_240/`
+- the intended files under `IonStack/CVE-2026-43499/exploit/src/targets/eureka-UP1A.231005.007.A1/`
 
 and does not contain:
 
@@ -147,11 +147,11 @@ Do not run or adapt any of this against systems you do not own or explicitly con
 
 ## Status
 
-The `kernel_5_10_240` target directory represents in-progress research rather than a claimed end-to-end successful exploit chain.
+The `eureka-UP1A.231005.007.A1` target directory represents in-progress research rather than a claimed end-to-end successful exploit chain.
 
 Current public state:
 
-- the target-specific port has been split out cleanly under `src/targets/kernel_5_10_240/`
+- the target-specific port has been split out cleanly under `src/targets/eureka-UP1A.231005.007.A1/`
 - symbol-derived constants and the main target-local source overrides are present
 - several candidate leak directions were investigated and narrowed down
 - `rt_mutex` / waiter layout assumptions were cross-checked against a matching `5.10.240` kernel source tree
