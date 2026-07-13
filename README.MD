@@ -147,4 +147,20 @@ Do not run or adapt any of this against systems you do not own or explicitly con
 
 ## Status
 
-The `kernel_5_10_240` target directory represents in-progress research rather than a claimed end-to-end successful exploit chain. The value of publishing it is the target adaptation work and the record of which directions were validated, ruled out, or left unresolved.
+The `kernel_5_10_240` target directory represents in-progress research rather than a claimed end-to-end successful exploit chain.
+
+Current public state:
+
+- the target-specific port has been split out cleanly under `src/targets/kernel_5_10_240/`
+- symbol-derived constants and the main target-local source overrides are present
+- several candidate leak directions were investigated and narrowed down
+- `rt_mutex` / waiter layout assumptions were cross-checked against a matching `5.10.240` kernel source tree
+- local-only artifacts used during reverse engineering and testing have been removed from the published tree
+
+What is not being claimed here:
+
+- a stable end-to-end root path on the target
+- a confirmed working KASLR / slide leak for this environment
+- a polished reproduction workflow suitable for third parties
+
+The value of publishing this state is the target adaptation work and the record of which directions were validated, ruled out, or left unresolved.
