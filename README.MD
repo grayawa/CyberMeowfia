@@ -107,22 +107,6 @@ This repo intentionally keeps build logic with each subproject. For `IonStack/CV
 
 The public repo does not include device images, IDA databases, extracted symbols, OTA zips, or temporary cloned kernel trees that were used during local research.
 
-## Included vs Excluded
-
-Included in the public tree:
-
-- source code
-- target-specific offset and adaptation work under `eureka-UP1A.231005.007.A1`
-- minimal repository documentation
-
-Excluded from the public tree:
-
-- OTA packages and extracted firmware artifacts
-- local kernel images and symbol dumps
-- IDA databases and reverse-engineering workspace state
-- temporary cloned reference trees
-- generated build outputs
-
 ## Release Checklist
 
 Before publishing, confirm that the diff contains only:
@@ -157,10 +141,8 @@ Current public state:
 - `rt_mutex` / waiter layout assumptions were cross-checked against a matching `5.10.240` kernel source tree
 - local-only artifacts used during reverse engineering and testing have been removed from the published tree
 
-What is not being claimed here:
+What to do:
 
-- a stable end-to-end root path on the target
-- a confirmed working KASLR / slide leak for this environment
-- a polished reproduction workflow suitable for third parties
-
-The value of publishing this state is the target adaptation work and the record of which directions were validated, ruled out, or left unresolved.
+- Find another way to get KBase,directly bypassing slide stage?Or fix the slide.h,but with little hope.
+- Write an app to execute this PoC,not using shell permission
+- Upstream it
