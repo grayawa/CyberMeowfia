@@ -1,0 +1,16 @@
+_tmp/
+
+# Local reverse-engineering / analysis artifacts
+*.i64
+kernel.elf
+symbol
+head
+sector
+preload_blazer.so
+*.zip
+
+# Build outputs
+build/
+
+# Local tool state
+.agents/
